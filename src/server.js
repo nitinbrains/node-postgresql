@@ -7,6 +7,10 @@ connectDB();
 const express = require('express');
 const app = express();
 
+//Body parser middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 const PORT = process.env.PORT || 5001;
 
 const server = app.listen(PORT, () => {
@@ -16,12 +20,14 @@ const server = app.listen(PORT, () => {
 
 //IMPORT ROUTES
 movieRoutes = require('./routes/movieRoutes');
+authRoutes = require('./routes/authRoutes');
 
 
 
 
 //USE ROUTES
 app.use('/movies', movieRoutes);
+app.use('/auth', authRoutes);
 
 
 
