@@ -21,6 +21,7 @@ const server = app.listen(PORT, () => {
 //IMPORT ROUTES
 movieRoutes = require('./routes/movieRoutes');
 authRoutes = require('./routes/authRoutes');
+watchListRoutes = require('./routes/watchListRoutes');
 
 
 
@@ -28,6 +29,7 @@ authRoutes = require('./routes/authRoutes');
 //USE ROUTES
 app.use('/movies', movieRoutes);
 app.use('/auth', authRoutes);
+app.use('/watchlist', watchListRoutes);
 
 
 
